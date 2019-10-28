@@ -1,0 +1,26 @@
+@mixin make-header-base() {
+  font-family: $fonts-secondary;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  margin-bottom: $header-margin-bottom;
+}
+
+@mixin make-text-style($type) {
+  @each $text-key, $text-item in $text-config {
+    @if $type == $text-key {
+      @each $text-type-key, $text-type-value in $text-item {
+        @if $text-type-key == default {
+          font-size: #{map-get($text-type-value, 'size')};
+          line-height: #{map-get($text-type-value, 'height')};
+        } @else {
+          @include media-breakpoint-down($text-type-key) {
+            font-size: #{map-get($text-type-value, 'size')};
+            line-height: #{map-get($text-type-value, 'height')};
+          }
+        }
+      }
+    }
+  }
+}

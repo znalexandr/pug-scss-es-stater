@@ -1,0 +1,2 @@
+[front]
+ubuntu@staging.dmc.cometrica.ru ansible_python_interpreter=/usr/bin/python3

@@ -1,0 +1,6 @@
+mixin radio
+  label.radio-control(class=attributes.class)
+    input.radio-control__input(name=attributes.name type="radio" value=attributes.value checked=attributes.checked)
+    .radio
+      .radio__inner
+    .radio-control__label=attributes.label

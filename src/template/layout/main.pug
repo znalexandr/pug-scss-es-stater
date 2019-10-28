@@ -1,0 +1,25 @@
+doctype html
+
+block variables
+
+include ../components/input
+include ../components/textarea
+include ../components/radio
+include ../components/nbsp
+include ../components/burger
+include ../components/imgRetina
+
+
+html(lang=location)
+  head
+    meta(charset="utf-8")
+    meta(name="description" content=description)
+    title #{title}
+  body
+    .root-layout#main
+      include header 
+      main.main 
+        block content
+      include footer 
+      include popup 
+      include menu 

@@ -1,0 +1,7 @@
+---
+cleanup: False
+project_dir: /opt/dmc/frontend-site
+docker_registry: 685321914474.dkr.ecr.eu-west-3.amazonaws.com
+letsencrypt_email: admin@orbita.center
+docker_external_network_name: "dmc"
+docker_containers_down: True

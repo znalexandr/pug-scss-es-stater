@@ -1,0 +1,78 @@
+section.section.section_styleguide
+  .container
+    h1.lead Styleguide
+
+    h2 Typography
+    .example
+      .example__row
+        .lead Lead. Heading example
+      .example__row
+        h1 H1. Heading example
+      .example__row
+        h2 H2. Heading example
+      .example__row
+        h3 H3. Heading example
+      .example__row
+        h4 H4. Heading example
+      .example__row
+        h5 H5. Heading example
+      .example__row
+        h6 H6. Heading example
+    
+    h2 Colors
+    .example
+      .example__row
+        .color.bg-white .bg-white
+        .color.bg-red .bg-red
+        .color.bg-blue1 .bg-blue1
+        .color.bg-blue2 .bg-blue2
+        .color.bg-color2 .bg-color2
+        .color.bg-color3.text-white .bg-color3
+        .color.bg-color4 .bg-color4
+        .color.bg-color5 .bg-color5
+        .color.bg-color6 .bg-color6
+        .color.bg-color7 .bg-color7
+      .example__row
+        h6.text-white.bg-color7 text-white
+        h6.text-red text-red
+        h6.text-blue1 text-blue1
+        h6.text-blue2 text-blue2
+        h6.text-color2.bg-color7 text-color2
+        h6.text-color3 text-color3
+        h6.text-color4.bg-color7 text-color4
+        h6.text-color5.bg-color7 text-color5
+        h6.text-color6.bg-color7 text-color6
+        h6.text-color7 text-color7
+
+    h2 Buttons
+    .example
+      h3 Variants
+      .example__row
+        button.btn Default
+        button.btn.btn_primary .btn_primary
+        button.btn.btn_outline.btn_primary .btn_outline.btn_primary
+        button.btn.btn_outline .btn_outline
+      h3 Sizes
+      .example__row
+        button.btn.btn_primary.btn_lg .btn_lg
+        button.btn.btn_primary.btn_md .btn_md
+        button.btn.btn_primary Default
+        button.btn.btn_primary.btn_xs .btn_xs
+      h3 Disabled
+      .example__row
+        button.btn.btn_primary.btn_lg(disabled) Disabled btn
+
+    h2 Inputs
+    .example
+      h3 Basic example
+      .example__row
+        +input(placeholder="Placeholder")
+      h3 Placeholder
+      .example__row
+        +input(placeholder="Введите ваше имя" value="Александр" )
+      h3 Error
+      .example__row
+        +input(placeholder="Введите ваше имя" error="Это поле с ошибкой" value="Text example" class="form-field_error")
+      h3 Large
+      .example__row
+        +input(placeholder=".input-control_lg" class="input-control_lg")

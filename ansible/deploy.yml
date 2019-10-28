@@ -1,0 +1,4 @@
+---
+- hosts: front
+  roles:
+    - frontend-site

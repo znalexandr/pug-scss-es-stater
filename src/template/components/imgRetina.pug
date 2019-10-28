@@ -1,0 +1,6 @@
+mixin imgRetina(src, filename, alt, exp="jpg")
+  - const pathDefault = `${src}/${filename}.${exp}`
+  - const img1 = `../../retina/${filename}@1.5x.${exp}`;
+  - const img2 = `../../retina/${filename}@2x.${exp}`;
+  - const img3 = `../../retina/${filename}@3x.${exp}`;
+  img(src=pathDefault  srcset=`${img1} 1.5x, ${img2} 2x, ${img3} 3x` alt=alt)

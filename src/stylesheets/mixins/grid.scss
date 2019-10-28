@@ -1,0 +1,20 @@
+@mixin make-row() {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter-item;
+  margin-left: -$gutter-item;
+}
+
+@mixin make-col-ready() {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter-item;
+  padding-left: $gutter-item;
+}
+
+@mixin make-col-size($size) {
+  $width: get-col-width($size);
+
+  flex: 0 0 $width;
+  max-width: $width;
+}

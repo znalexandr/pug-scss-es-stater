@@ -1,0 +1,208 @@
+// grid config
+
+$gutter: 30px;
+$gutter-item: ($gutter / 2);
+
+$grid-breakpoints: (
+  xxs: 0,
+  // mobile
+    xs: 320px,
+  // mobile l
+    sm: 414px,
+  // tablet
+    md: 768px,
+  // laptop
+    lg: 1024px,
+  // laptop l
+    xl: 1440px,
+  // laptop xl
+    xxl: 1600px
+);
+
+// colors
+$base-colors: (
+  blue1: #3873ff,
+  blue2: #254a98,
+  white: #fff,
+  red: #ff3838,
+  variant2: #e5e5e5,
+  variant3: #112131,
+  variant4: #e3e7eb,
+  variant5: #edeff3,
+  variant6: #edf1fb,
+  variant7: #92a1af
+);
+
+$color-blue1: map-get($base-colors, blue1);
+$color-blue2: map-get($base-colors, blue2);
+$color-white: map-get($base-colors, white);
+$color-red: map-get($base-colors, red);
+$color-variant2: map-get($base-colors, variant2);
+$color-variant3: map-get($base-colors, variant3);
+$color-variant4: map-get($base-colors, variant4);
+$color-variant5: map-get($base-colors, variant5);
+$color-variant6: map-get($base-colors, variant6);
+$color-variant7: map-get($base-colors, variant7);
+
+$color-primary: $color-blue1;
+
+// fonts
+$fonts-primary: 'Lato';
+$fonts-secondary: 'Gilroy';
+
+//body
+$font-family-base: $fonts-primary;
+$font-size-base: 16px;
+$font-weight-base: normal;
+$line-height-base: normal;
+$body-color: #000;
+$body-bg: #fff;
+
+// typography
+$text-config: (
+  lead: (
+    default: (
+      size: 58px,
+      height: 63px
+    ),
+    sm: (
+      size: 44px,
+      height: 48px
+    ),
+    xs: (
+      size: 40px,
+      height: 44px
+    )
+  ),
+  h1: (
+    default: (
+      size: 50px,
+      height: 52px
+    ),
+    lg: (
+      size: 44px,
+      height: 52px
+    ),
+    md: (
+      size: 40px,
+      height: 44px
+    ),
+    sm: (
+      size: 36px,
+      height: 44px
+    ),
+    xs: (
+      size: 32px,
+      height: 36px
+    )
+  ),
+  h2: (
+    default: (
+      size: 40px,
+      height: 50px
+    ),
+    lg: (
+      size: 30px,
+      height: 36px
+    ),
+    md: (
+      size: 28px,
+      height: 34px
+    ),
+    sm: (
+      size: 20px,
+      height: 24px
+    ),
+    xs: (
+      size: 20px,
+      height: normal
+    )
+  ),
+  h3: (
+    default: (
+      size: 32px,
+      height: 39px
+    ),
+    md: (
+      size: 28px,
+      height: 34px
+    ),
+    sm: (
+      size: 24px,
+      height: normal
+    ),
+    xs: (
+      size: 20px,
+      height: normal
+    )
+  ),
+  h4: (
+    default: (
+      size: 28px,
+      height: 32px
+    ),
+    sm: (
+      size: 20px,
+      height: 24px
+    ),
+    xs: (
+      size: 16px,
+      height: 22px
+    )
+  ),
+  h5: (
+    default: (
+      size: 20px,
+      height: normal
+    ),
+    sm: (
+      size: 18px,
+      height: normal
+    )
+  ),
+  h6: (
+    default: (
+      size: 18px,
+      height: normal
+    ),
+    sm: (
+      size: 16px,
+      height: normal
+    ),
+    xs: (
+      size: 14px,
+      height: normal
+    )
+  ),
+  text-default: (
+    default: (
+      size: 24px,
+      height: 30px
+    ),
+    lg: (
+      size: 20px,
+      height: 24px
+    ),
+    md: (
+      size: 24px,
+      height: 30px
+    ),
+    sm: (
+      size: 18px,
+      height: 24px
+    ),
+    xs: (
+      size: 16px,
+      height: 22px
+    )
+  )
+);
+
+$header-margin-bottom: 0.5rem;
+
+$paragraph-margin-bottom: 20px;
+
+$link-color: $color-primary;
+$link-decoration: none;
+$link-hover-color: $color-primary;
+$link-hover-decoration: none;

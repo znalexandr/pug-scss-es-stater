@@ -1,0 +1,29 @@
+.section_styleguide {
+  .example {
+    border-radius: 8px;
+    background-color: #eee;
+    padding: 1.5rem;
+
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+
+    &__row {
+      &:not(:last-of-type) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .color {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
+}

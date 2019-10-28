@@ -1,0 +1,15 @@
+.text {
+  @each $name, $color in $base-colors {
+    &-#{$name} {
+      color: $color;
+    }
+  }
+}
+
+.bg {
+  @each $name, $color in $base-colors {
+    &-#{$name} {
+      background-color: $color;
+    }
+  }
+}

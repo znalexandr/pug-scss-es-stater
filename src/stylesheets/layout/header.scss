@@ -1,0 +1,69 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  z-index: 5;
+  background-color: $color-variant3;
+  color: $color-white;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+
+  &_visible {
+    transform: translateY(0);
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-white;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.logo-dmc {
+  display: block;
+  width: 233px;
+  height: 25px;
+  background: url(../images/svg/dmc-logo.svg) no-repeat;
+  background-size: contain;
+
+  @include media-breakpoint-down(xs) {
+    width: 179px;
+    height: 20px;
+    background-size: contain;
+  }
+}
+
+.header-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  &__right {
+    justify-content: flex-end;
+  }
+}
+
+.header-list {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    &:not(:first-of-type) {
+      margin-left: 30px;
+      @include media-breakpoint-down(xs) {
+        margin-left: 0;
+      }
+    }
+  }
+}

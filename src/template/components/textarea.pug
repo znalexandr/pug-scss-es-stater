@@ -1,0 +1,5 @@
+mixin textarea
+  label.textarea-control.form-field(class=attributes.class)
+    textarea.textarea-control__textarea.form-field__input(name=attributes.name type=attributes.type value=attributes.value maxLength=attributes.maxLength rows=attributes.rows)
+    .textarea-control__placeholder=attributes.placeholder
+    .textarea-control__error.form-field__error=attributes.error

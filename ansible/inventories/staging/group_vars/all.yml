@@ -1,0 +1,8 @@
+---
+cleanup: False
+
+container_name_prefix: "dmc"
+network_name_prefix: "dmc"
+
+
+virtual_host_site: site.staging.dmc.cometrica.ru

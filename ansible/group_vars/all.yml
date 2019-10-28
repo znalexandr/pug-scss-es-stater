@@ -1,0 +1,6 @@
+---
+letsencrypt_email: admin@orbita.center
+unix_user: "ubuntu"
+cleanup: "False"
+#cleanup: "{{ lookup('env','CLEANUP') }}"
+version: "{{ lookup('env','VERSION') }}"

@@ -1,0 +1,19 @@
+$display: (block, none, flex, inline-flex, inline, inline-block);
+
+.d {
+  @each $key, $value in $grid-breakpoints {
+    @each $type in $display {
+      @include media-breakpoint-up($key) {
+        @if $key == xs {
+          &-#{$type} {
+            display: $type !important;
+          }
+        } @else {
+          &-#{$key}-#{$type} {
+            display: $type !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+---
+- block:
+  - name: "Clean dirs with old data"
+    become: yes
+    file:
+      path: '{{ item }}'
+      state: absent
+    with_items:
+      - "{{ project_dir }}/data"
+      - "{{ project_dir }}/logs"
+      - "{{ project_dir }}/deployment"
+      - "{{ project_dir }}/config"
+  when: cleanup
+
+- name: "Ensure directories exist"
+  become: yes
+  file:
+    path: '{{ item }}'
+    state: directory
+    mode: 0777
+    owner: '{{ unix_user }}'
+  with_items:
+    - '{{ project_dir }}/deployment'
+    - '{{ project_dir }}/logs'
+
+- name: "Check if docker-compose file exists"
+  stat:
+    path: '{{ project_dir }}/deployment/docker-compose.yml'
+  register: docker_compose_file
+  when: docker_containers_down
+
+- name: "Make docker compose backup"
+  copy:
+    remote_src: yes
+    src: '{{ project_dir }}/deployment/docker-compose.yml'
+    dest: '{{ project_dir }}/deployment/docker-compose-running.yml'
+  when:  docker_containers_down and docker_compose_file.stat.exists
+
+- name: "Place docker-compose.yml"
+  become: yes
+  template:
+    src: templates/docker-compose.yml
+    dest: '{{ project_dir }}/deployment/docker-compose.yml'
+
+- name: "Docker login"
+  shell: 'aws ecr get-login --region eu-west-3 | sed "s/-e [^ ]\+//" | bash -'
+
+- name: "Pull new images"
+  shell: 'docker-compose pull'
+  args:
+    chdir: "{{ project_dir }}/deployment"
+
+- name: "Bring containers down if yes"
+  command: "docker-compose -f {{ project_dir }}/deployment/docker-compose-running.yml -p {{ role_name }} down -v --remove-orphans"
+  args:
+    chdir: "{{ project_dir }}/deployment"
+  when: docker_compose_file.stat.exists
+
+- name: "Get network {{ docker_external_network_name }} exists fact"
+  shell: "docker network ls | grep {{ docker_external_network_name }} | awk '{print $2}'"
+  register: network
+
+- name: "Create shared {{ docker_external_network_name }} network if not exists"
+  command: "docker network create --attachable -d bridge -o 'com.docker.network.driver.mtu'='1400' {{ docker_external_network_name }}"
+  when: network.stdout is defined and not network.stdout
+
+- name: "Bring containers up"
+  command: "docker-compose -p {{ role_name }} up -d"
+  args:
+    chdir: "{{ project_dir }}/deployment"
+
+- name: "Remove old running compose file"
+  file:
+    path: '{{ project_dir }}/deployment/docker-compose-running.yml'
+    state: absent

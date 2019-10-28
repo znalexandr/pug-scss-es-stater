@@ -1,0 +1,3 @@
+@function get-col-width($col) {
+  @return #{100 / $col + '%'};
+}

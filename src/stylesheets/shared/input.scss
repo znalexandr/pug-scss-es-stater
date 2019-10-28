@@ -1,0 +1,123 @@
+.input-control {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 24px;
+  font-size: 22px;
+
+  @include media-breakpoint-down(md) {
+    height: 70px;
+    line-height: 28px;
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    line-height: 24px;
+    font-size: 20px;
+  }
+
+  &_lg {
+    height: 80px;
+    line-height: 36px;
+    font-size: 32px;
+
+    @include media-breakpoint-down(md) {
+      height: 70px;
+      line-height: 28px;
+      font-size: 24px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      line-height: 24px;
+      font-size: 20px;
+    }
+  }
+
+  &__input {
+    display: block;
+    padding: 25px 24px 11px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 14px;
+    background-color: $color-variant6;
+    outline: none;
+
+    @include media-breakpoint-down(sm) {
+      padding: 25px 18px 11px;
+    }
+
+    .form-field_error & {
+      color: $color-red;
+    }
+  }
+
+  &__small-label {
+    position: absolute;
+    top: 11px;
+    left: 24px;
+    line-height: 14px;
+    font-size: 14px;
+
+    @include media-breakpoint-down(sm) {
+      left: 18px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-size: 12px;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    color: rgba(111, 129, 148, 0.5);
+    transition: all 0.3s ease, color 1;
+    user-select: none;
+    cursor: text;
+
+    @include media-breakpoint-down(sm) {
+      left: 18px;
+    }
+
+    .input-control_lg & {
+      top: 20px;
+    }
+
+    .form-field_active &,
+    .input-control__input:focus + & {
+      @extend .input-control__small-label;
+    }
+
+    .input-control_lg.form-field_active &,
+    .input-control_lg .input-control__input:focus + & {
+      @extend .input-control__small-label;
+    }
+
+    .form-field_active.form-field_error &,
+    .form-field_error .input-control__input:focus + & {
+      display: none;
+    }
+
+    .form-field_error & {
+      top: 25px;
+      color: $color-red;
+    }
+
+    .input-control_lg.form-field_error & {
+      top: 25px;
+    }
+  }
+
+  &__error {
+    @extend .input-control__small-label;
+
+    color: $color-red;
+
+    .input-control:not(.form-field_error) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.footer {
+  padding: 70px 0;
+
+  @include media-breakpoint-down(lg) {
+    padding: 34px 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 26px 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 43px 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 62px 0;
+  }
+
+  &__wrapper-copyright {
+    padding-top: 62px;
+    text-align: right;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 71px;
+      text-align: center;
+    }
+  }
+
+  &__copyright {
+    color: #aab5c0;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+}
+
+.footer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+
+  &__left {
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.apps {
+  display: flex;
+
+  &__item {
+    width: 135px;
+    font-size: 0;
+    user-select: none;
+
+    @include media-breakpoint-down(md) {
+      width: 110px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 135px;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+
+      @include media-breakpoint-down(md) {
+        margin-right: 8px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-right: 10px;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.footer-list {
+  display: flex;
+  justify-content: flex-end;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+    text-align: center;
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 22px;
+
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: 40px;
+
+      @include media-breakpoint-down(lg) {
+        margin-left: 30px;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-left: 19px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 16px;
+        margin-left: 0;
+      }
+    }
+
+    a {
+      color: $body-color;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
