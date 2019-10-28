@@ -1,15 +1,17 @@
-# dmc-frontend-site
- 
+# Webpack 4 + PUG + SCSS + ES
+
 ## start
- ```bash
+
+```bash
 yarn install
- ```
- 
- ```bash
+```
+
+```bash
 yarn dev
- ```
- 
+```
+
 ## build
- ```bash
+
+```bash
 yarn build:dist
- ```
+```
